@@ -9,6 +9,18 @@
     <h1>Bienvenido a mi sitio</h1>
     <p>Este es el ejercicio 4 de Desarrollo Web con Express.</p>
 </div>
-<div class="contacto">
+
+
+<div class="container">
     <h1>Contacto</h1>
-    <p>Si tienes alguna pregunta o deseas ponerte en contacto con nosotros, no dudes en enviarnos un correo electrónico a <a href="mailto:
+    <form action="/contacto" method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" required></textarea><br><br>
+        
+        <button type="submit">Enviar datos</button>
+    </form>
+</div>
+    

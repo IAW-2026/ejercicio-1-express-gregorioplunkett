@@ -29,6 +29,22 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: '¡Algo salió mal!' });
 });
 
+// Ruta para recibir los datos del formulario
+app.post('/contacto', (req, res) => {
+    // Los datos llegan en req.body gracias al "name" que pusimos en el HTML
+    const { nombre, mensaje } = req.body;
+
+    // El ejercicio pide responder con un HTML que muestre los datos
+    res.send(`
+        <div style="font-family: sans-serif; padding: 20px;">
+            <h1>¡Gracias por tu mensaje, ${nombre}!</h1>
+            <p>Hemos recibido lo siguiente: "${mensaje}"</p>
+            <a href="/">Volver al inicio</a>
+        </div>
+    `);
+});
+
+
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
